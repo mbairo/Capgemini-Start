@@ -1,0 +1,58 @@
+$color: rgb(149, 204, 149);
+$color-sub-title: rgb(196, 138, 84);
+$color-text: rgb(46, 37, 37);
+$color-background: gray;
+$color-li: rgb(132, 132, 214);
+$color-red: rgb(94, 53, 53);
+
+
+@mixin colorBackground($color-background){
+    background-color: $color-background * 0.8;
+}
+
+div {
+    p{
+        @include colorBackground($color-background);
+        b{
+            color: rgb(160, 214, 160)
+        }
+    }
+}
+
+
+
+body {
+    @include colorBackground($color-background);
+    @if ($color-background == gray) {
+        color: #{$color-background*0.2}
+    } @else {
+        color: $color-title * 0.5;
+    }    
+}
+
+.shadow {
+    text-shadow: 2px 1px 1px whitesmoke;
+    text-decoration: underline;
+    color: $color-li;
+}
+
+h1 {
+    color: $color-title;
+}
+
+h2 {
+    color: $color-sub-title;
+}
+
+
+p {
+    color: $color-text;
+}
+
+li {
+    color: $color-li;
+    b {
+        color: $color-red;
+    }
+}
+

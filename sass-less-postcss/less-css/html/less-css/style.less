@@ -1,0 +1,37 @@
+@color-title: Green;
+@color-sub-title: rgb(84, 196, 84);
+@color-text: rgb(46, 37, 37);
+@color-background: gray;
+@color-li: blue;
+@color-b: red;
+
+
+h1 {
+    color: @color-title;
+}
+
+h2 {
+    .function-background('h2')
+}
+
+p {
+    color: @color-text;
+    .function-background('p')
+}
+
+li {
+    color: @color-li;
+    b {
+        color: @color-b;
+    }
+}
+
+
+.function-background (@background) {
+    & when (@background = 'h2') {
+       background-color: @color-background;
+    }
+    & when (@background = 'p') {
+        background-color: @color-background * 0.8;
+    }
+}
